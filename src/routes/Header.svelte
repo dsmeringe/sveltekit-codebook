@@ -44,6 +44,7 @@
 	.corner {
 		width: 3em;
 		height: 3em;
+		border:1px solid red;
 	}
 
 	.corner a {
@@ -64,6 +65,7 @@
 		display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7);
+		border:1px solid red;
 	}
 
 	svg {
