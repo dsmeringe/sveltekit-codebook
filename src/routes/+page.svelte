@@ -8,7 +8,8 @@
 import SvelteMarkdown from 'svelte-markdown';
 
 let newContributionTitle = '';
-let newContribution = "This could be your text..";
+const defaultNewContribtion = "This could be your text..";
+let newContribution = defaultNewContribtion;
 let entries = [
 	{ title: 'example', content: 'cool stuff in md style' },
 	{ title: 'second example', content: 'not cool stuff in md style' },
@@ -46,12 +47,13 @@ function addItem () {
 	</div>
 </section>
 <section>
-	<label for="editor">Add new content using markup</label>
+	<label for="editor">Add new content using markdown</label>
 	<textarea 
 		name="editor"
 		class="editor" 
 		contenteditable 
 		bind:value={newContribution}
+		on:focus="{(e) => e.target.value = newContribution=defaultNewContribtion ?  defaultNewContribtion : '' }"
 	/>
 	<label>
 		Title: 
